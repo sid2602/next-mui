@@ -1,95 +1,81 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import {
+	Accordion,
+	Box,
+	Button,
+	Card,
+	CardActions,
+	CardContent,
+	Link,
+	Typography,
+} from "@mui/material";
+
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import { default as NextLink } from "next/link";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<main>
+			<Typography variant="h1">Hello</Typography>
+			<Typography
+				style={{
+					color: "red",
+				}}
+			>
+				ANOTHER
+			</Typography>
+			<Button variant="outlined">BTN</Button>
+			<Card sx={{ minWidth: 275 }}>
+				<CardContent>
+					<Typography
+						sx={{ fontSize: "1rem", color: "text.secondary" }}
+						gutterBottom
+					>
+						lorem ipsum
+					</Typography>
+					<Typography variant="h5" component="div">
+						LOL
+					</Typography>
+					<Typography sx={{ mb: 1.5, color: "text.secondary" }}>
+						lorem ipsum
+					</Typography>
+					<Typography variant="body2">lorem ipsum lorem ipsum</Typography>
+				</CardContent>
+				<CardActions>
+					<Button size="small">Learn More</Button>
+				</CardActions>
+				<Accordion>
+					<AccordionSummary aria-controls="panel1-content" id="panel1-header">
+						Accordion 1
+					</AccordionSummary>
+					<AccordionDetails>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+						malesuada lacus ex, sit amet blandit leo lobortis eget.
+					</AccordionDetails>
+				</Accordion>
+				<Accordion>
+					<AccordionSummary aria-controls="panel2-content" id="panel2-header">
+						Accordion 2
+					</AccordionSummary>
+					<AccordionDetails>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+						malesuada lacus ex, sit amet blandit leo lobortis eget.
+					</AccordionDetails>
+				</Accordion>
+				<Box display={"flex"} gap={"4rem"}>
+					<Link href="/test" component={NextLink}>
+						Test
+					</Link>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+					<Link href="/customComponent" component={NextLink}>
+						customComponent
+					</Link>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+					<Link href="/form" component={NextLink}>
+						form
+					</Link>
+				</Box>
+			</Card>
+		</main>
+	);
 }
